@@ -1,0 +1,30 @@
+<header>
+  Header
+</header>
+
+<main>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% content_for :title, "Posts" %>
+
+  <h1>Posts</h1>
+
+  <div id="posts">
+    <% @posts.each do |post| %>
+      <h2>
+        <%= link_to post.title, post %>
+      </h2>
+      <p>
+        <%= post.excerpt %>
+      </p>
+      <small>
+        Posted <%= time_tag post.created_at, "data-local": "time-ago" %>
+      </small>
+    <% end %>
+  </div>
+</main>
+
+<footer>
+  <%= link_to "New post", new_post_path %>
+</footer>
