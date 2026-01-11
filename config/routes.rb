@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get "pages/about"
   get "pages/contact"
 
-  resources :posts
   resources :posts do
     resources :comments
   end

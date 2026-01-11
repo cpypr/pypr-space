@@ -1,15 +1,13 @@
-<div id="<%= dom_id post %>">
+<article id="<%= dom_id post %>">
 
-  <h1><%= post.title %></h1>
-  <p>
-    <i>
-      <%= post.excerpt %>
-    </i>
-  </p>
+  <header>
+    <h1><%= post.title %></h1>
+    <%= time_tag post.updated_at, "data-local": "time-ago" %>
+    <p id="excerpt"><%= post.excerpt %></p>
+  </header>
 
   <%= post.body %>
 
-  <small>
-    Updated at: <%= time_tag post.updated_at, "data-local": "time-ago" %>
-  </small>
-</div>
+  <%= render "comments/comments", post: @post %>
+
+</article>

@@ -1,0 +1,10 @@
+<section>
+
+  <h2>Comments</h2>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
+  <%= render "comments/new", post: @post %>
+
+</section>
