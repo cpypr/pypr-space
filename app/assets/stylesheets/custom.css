@@ -1,5 +1,103 @@
+/* Styling for specific elements */
 :root {
-  --accent: #e0115f !important;
+  --green: #65f283;
+  --blue: #4ad9db;
+  --red: #f98ca4;
+  --orange: #f5b10b;
+  --mustard: #dac249;
+  --darkblue: #2f3e9c;
+  --darkred: #9e132c;
+  --purple: #6e1f58;
+  --outline: 2px;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0.0625em solid var(--accent);
+  box-shadow: 0 -0.25em 0 var(--accent) inset;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom-color: var(--code);
+  box-shadow: 0 -0.25em 0 var(--code) inset;
+}
+
+/*a,
+a:visited {
+  color: inherit;
+  text-decoration: underline solid var(--accent) 0.25rem;
+}
+
+a:hover {
+  text-decoration: underline solid var(--code) 0.25rem;
+}*/
+
+#logo {
+  font-size: clamp(2rem, 1rem + 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  border: unset;
+  box-shadow: unset;
+  color: var(--bg-secondary);
+
+  text-shadow:
+    4px 4px var(--accent),
+    3px 3px var(--accent),
+    2px 2px var(--accent),
+    1px 1px var(--accent);
+}
+
+#comments > article {
+  background: var(--bg-secondary);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+#comments > article p:first-of-type {
+  margin-top: 0;
+}
+
+#comments > article p:last-of-type {
+  margin-bottom: 0;
+}
+
+#comments time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+#posts > article {
+  margin-bottom: 2.5rem;
+}
+
+#posts > article > h2 {
+  margin-bottom: 0.75rem;
+}
+#posts time {
+  color: var(--text-secondary);
+}
+
+article > header {
+  margin-bottom: 2.2rem;
+}
+
+article > header > time {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+article > header > p {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
 }
 
 .trix-content p {

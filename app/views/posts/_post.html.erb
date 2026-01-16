@@ -2,8 +2,8 @@
 
   <header>
     <h1><%= post.title %></h1>
-    <%= time_tag post.updated_at, "data-local": "time-ago" %>
     <p id="excerpt"><%= post.excerpt %></p>
+    <%= time_tag post.created_at, "data-local": "time", "data-format": "%e %B %Y" %>
   </header>
 
   <%= post.body %>
