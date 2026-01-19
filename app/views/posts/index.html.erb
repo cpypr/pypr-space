@@ -5,17 +5,19 @@
 
 <h1>Posts</h1>
 
-<section aria-label="Latest Posts" id="posts">
+<div aria-label="Latest Posts" id="posts">
   <% @posts.each do |post| %>
     <article>
       <h2>
         <%= link_to post.title, post %>
       </h2>
-      <%= time_tag post.created_at, "data-local": "time", "data-format": "%e %B %Y" %>
+      <%= tag.time time_ago_in_words(post.created_at) + " ago",
+                   datetime: post.created_at.iso8601,
+                   title: l(post.created_at, format: :long) %>
     </article>
   <% end %>
-</section>
+</div>
 
-<section aria-label="Post Tools" id="tools">
+<p>
   <%= link_to "New post", new_post_path %>
-</section>
+</p>

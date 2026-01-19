@@ -1,5 +1,27 @@
-:root {
-  --accent: #e0115f !important;
+/* Styling for specific elements */
+
+#logo {
+  font-size: clamp(2rem, 1rem + 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  border: unset;
+  text-decoration: none;
+  box-shadow: unset;
+  color: var(--bg-secondary);
+
+  text-shadow:
+    4px 4px var(--ruby),
+    3px 3px var(--ruby),
+    2px 2px var(--ruby),
+    1px 1px var(--ruby);
+}
+
+#comments {
+  grid-template-columns: 1fr;
+}
+#comments > article p {
+  margin: 0;
 }
 
 .trix-content p {

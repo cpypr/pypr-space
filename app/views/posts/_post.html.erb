@@ -2,8 +2,10 @@
 
   <header>
     <h1><%= post.title %></h1>
-    <%= time_tag post.updated_at, "data-local": "time-ago" %>
     <p id="excerpt"><%= post.excerpt %></p>
+    <%= tag.time time_ago_in_words(@post.created_at) + " ago",
+                 datetime: @post.created_at.iso8601,
+                 title: l(@post.created_at, format: :long) %>
   </header>
 
   <%= post.body %>
