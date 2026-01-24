@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <%= button_to "Log Out", session_path, method: :delete %>
     <%= render "shared/header" %>
     <main>
       <%= yield %>
