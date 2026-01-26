@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Lexxy
-gem "lexxy", "~> 0.7.2.beta"
+gem "lexxy", "~> 0.7.3.beta"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
