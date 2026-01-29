@@ -1,7 +1,66 @@
 /* Styling for specific elements */
+body>header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: var(--bg-secondary); */
+  background-image: unset;
+  backdrop-filter: unset;
+  padding: .5rem 1.5rem;
+  border-bottom: 0;
+
+  background: linear-gradient(180deg, var(--bg), transparent);
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 104;
+  height: 6rem;
+}
+
+main>hgroup {
+  margin-bottom: 5rem;
+}
+
+main>hgroup>p {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  letter-spacing: .5px;
+}
+
+body>header>nav {
+  pointer-events: auto;
+}
+
+body>main {
+  margin-top: 7.5rem;
+}
+
+body>main:after {
+  background: linear-gradient(180deg, var(--bg), transparent);
+  content: "";
+  height: 7.4em;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+article>h2>a {
+  color: var(--text);
+}
+
+article>h2>a:hover {
+  color: var(--text);
+}
 
 #logo {
-  font-size: clamp(2rem, 1rem + 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 1rem + 5vw, 2.5rem);
   font-weight: 900;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
@@ -15,12 +74,15 @@
     3px 3px var(--ruby),
     2px 2px var(--ruby),
     1px 1px var(--ruby);
+
+  pointer-events: auto;
 }
 
 #comments {
   grid-template-columns: 1fr;
 }
-#comments > article p {
+
+#comments>article p {
   margin: 0;
 }
 
