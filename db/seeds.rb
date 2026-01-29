@@ -5,26 +5,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-# default user
-User.delete_all
-
-User.create! email_address: 'cpijper@startmail.com', password: '123'
-
 Post.delete_all
-
-Post.create!(
-  title: 'De "Rails Way": een openbaring',
-  excerpt: 'De overstap naar Ruby en Rails is mijn professionele openbaring, het moment waarop ik de technische ruis achterliet en begon aan een nieuw, helder hoofdstuk als developer.',
-  body:
-    %(
-    <p>Jarenlang bestond mijn werkdag voor een groot deel uit het stoeien met de randvoorwaarden. In de wereld van PHP en JavaScript was ik vaak meer tijd kwijt aan de infrastructuur rondom de code dan aan het oplossen van het eigenlijke probleem. Ik was constant bezig met het finetunen van mappenstructuren, het configureren van build-tools of het afwegen van welke library dit keer het minst in de weg zou zitten. Hoewel ik met plezier bouwde, voelde het alsof ik telkens eerst een complete werkplaats moest timmeren voordat ik aan het echte meubelstuk kon beginnen.</p>
-    <p>Toen ik vorig jaar Ruby ontdekte, sloeg de vonk direct over. Voor het eerst in jaren voelde programmeren niet als het instrueren van een machine, maar als een natuurlijke manier van uitdrukken. Ruby is ontworpen voor menselijk geluk, en dat merk je in elke regel. Het biedt de elegantie van een taal die leest als een goed geschreven tekst, waarbij de ruis van haakjes en complexe syntax plaats maakt voor pure logica. Die hervonden passie voor het schrijven van mooie, bijna poëtische code gaf me de energie die ik ergens onderweg in de chaos van andere stacks was verloren.</p>
-    <p>Maar passie alleen bouwt geen applicaties. Waar Ruby de vonk was, werd Ruby on Rails de structuur die het vuur brandend hield. Rails bracht de rust waar ik als full-stack developer zo naar op zoek was. Het nam de duizend kleine, vermoeiende beslissingen over de randvoorwaarden van me over door middel van Convention over Configuration. Plotseling hoefde ik niet meer na te denken over de fundering; die stond er al, robuust en bewezen. Deze structuur voelt niet als een keurslijf, maar juist als een bevrijding. Het haalt de ruis weg, waardoor ik direct bij de kern van mijn werk kom.</p>
-    <p>Deze combinatie maakt mijn werk fundamenteel anders. Waar ik voorheen vaak vreesde voor de “technical debt” die sluipenderwijs in complexe JavaScript-architecturen kroop, ervaar ik nu een nieuwe vorm van rust. Elegante Ruby-code is namelijk code die zichzelf uitlegt. Het dwingt een leesbaarheid af die ervoor zorgt dat ik (of iemand anders) over een jaar nog steeds precies begrijp wat de intentie was. Door de randvoorwaarden te standaardiseren met Rails, creëer ik geen doolhof, maar een helder pad. Ik maak het mezelf makkelijker, niet om minder te doen, maar om duurzamer te bouwen. Het resultaat is software die niet alleen sneller staat, maar ook met een glimlach te onderhouden is.</p>
-    <p>Deze openbaring heeft mijn kijk op het vak veranderd. Ruby herinnert me eraan waarom ik ooit met programmeren begon, en de structuur van Rails geeft me de mogelijkheid om die passie om te zetten in “tastbare” resultaten. In een wereld die vaak kiest voor kunstmatige complexiteit, kies ik voor de rust van een systeem dat simpelweg klopt. In plaats van kostbare energie te verliezen aan de randvoorwaarden, zit ik nu in een constante flow. Het framework draagt de last van de architectuur, zodat ik me volledig kan storten op het bouwen van de oplossing.</p>
-    <p>Op deze blog houd ik mijn nieuwe koers bij en probeer je mee te nemen in mijn ontdekkingen binnen het Ruby-ecosysteem en de lessen die ik leer in Rails. Daarnaast kijk ik verder: ik zal ook schrijven over frontend-oplossingen en over de fundamenten van webontwikkeling. Het schrijven helpt me bovendien om de nieuwe kennis echt te verankeren. Door een probleem of techniek uit te leggen, dwing ik mezelf tot de kern te komen en de stof echt te beheersen. Tegelijkertijd hoop ik anderen te helpen die een soortgelijke overstap maken of tegen dezelfde uitdagingen aanlopen. Door mijn zoektocht en oplossingen te delen, hoop ik het pad voor een ander net iets korter en duidelijker te maken.</p>
-  ))
-
 
 Post.create!(
   title: 'Scaling with Ruby and Rails',

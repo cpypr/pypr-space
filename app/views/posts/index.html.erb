@@ -3,8 +3,10 @@
 
 <% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
-
+<hgroup>
+  <h1>Notities</h1>
+  <p>Hier zet ik mijn schrijfsels neer over Ruby, Rails, frontend, en nog veel meer dingen die met het web te maken hebben.</p>
+</hgroup>
 <div aria-label="Latest Posts" id="posts">
   <% @posts.each do |post| %>
     <article>
@@ -18,6 +20,8 @@
   <% end %>
 </div>
 
-<p>
+<% if authenticated? %>
+<div id="admin-tools">
   <%= link_to "New post", new_post_path %>
-</p>
+</div>
+<% end %>

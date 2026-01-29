@@ -18,12 +18,15 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag "classless", "custom", "lexxy", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "lexxy", "classless", "custom", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= button_to "Log Out", session_path, method: :delete %>
+    <% if authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete %>
+    <% end %>
+
     <%= render "shared/header" %>
     <main>
       <%= yield %>

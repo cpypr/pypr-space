@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
-  get "home", to: "pages#home"
+  get "home", to: "posts#index"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
 

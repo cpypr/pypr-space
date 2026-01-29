@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  allow_unauthenticated_access only: %i[ index show ]
+
   # GET /posts or /posts.json
   def index
     @posts = Post.order(created_at: :desc)
