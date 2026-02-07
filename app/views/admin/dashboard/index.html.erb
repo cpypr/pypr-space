@@ -1,0 +1,22 @@
+<h1>Dashboard</h1>
+<p>Hallo!</p>
+<p>Aantal gebruikers: <%= @user_count %></p>
+
+<p>
+  <%= link_to "New post", new_post_path %>
+</p>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <article>
+      <strong>
+        <%= link_to post.title, post %>
+      </strong>
+      <%= tag.time time_ago_in_words(post.created_at) + " ago",
+                   datetime: post.created_at.iso8601,
+                   title: l(post.created_at, format: :long) %>
+      | 
+      <%= link_to "Edit", edit_post_path(post) %>
+    </article>
+  <% end %>
+</div>
