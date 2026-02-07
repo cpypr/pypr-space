@@ -4,18 +4,19 @@
 <% content_for :title, "Posts" %>
 
 <hgroup>
-  <h1>Notities</h1>
-  <p>Hier zet ik mijn schrijfsels neer over Ruby, Rails, frontend, en nog veel meer dingen die met het web te maken hebben.</p>
+  <h1>Bytes</h1>
+  <p>Berichten over mijn reis door het Rails-universum, de evolutie van frontend-technologie en de tijdloze wetten van het internet</p>
 </hgroup>
 <div aria-label="Latest Posts" id="posts">
   <% @posts.each do |post| %>
     <article>
-      <h2>
-        <%= link_to post.title, post %>
-      </h2>
       <%= tag.time time_ago_in_words(post.created_at) + " ago",
                    datetime: post.created_at.iso8601,
                    title: l(post.created_at, format: :long) %>
+      <h2>
+        <%= link_to post.title, post %>
+      </h2>
+
     </article>
   <% end %>
 </div>

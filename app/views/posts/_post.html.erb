@@ -1,16 +1,16 @@
 <article id="<%= dom_id post %>">
 
   <header>
+    <h1><%= post.title %></h1>
+    <p id="excerpt"><%= post.excerpt %></p>
     <%= tag.time time_ago_in_words(@post.created_at) + " ago",
                  datetime: @post.created_at.iso8601,
                  title: l(@post.created_at, format: :long) %>
-
-    <h1><%= post.title %></h1>
-    <p id="excerpt"><%= post.excerpt %></p>
-
   </header>
 
   <%= post.body %>
+
+  <%= link_to 'Back to bytes', root_path %>
 
   <%= render "comments/comments", post: @post %>
 

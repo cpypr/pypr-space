@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+
+<div aria-label="Latest Posts" id="posts">
+  <% @posts.each do |post| %>
+    <article>
+      <h2>
+        <%= link_to post.title, post %>
+      </h2>
+      <%= tag.time time_ago_in_words(post.created_at) + " ago",
+                   datetime: post.created_at.iso8601,
+                   title: l(post.created_at, format: :long) %>
+    </article>
+  <% end %>
+</div>
