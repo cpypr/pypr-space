@@ -3,14 +3,33 @@ class CommentsController < ApplicationController
 
   allow_unauthenticated_access
 
+  rate_limit to: 3, within: 1.minute, only: :create, with: -> {
+    redirect_to @post, alert: "Te veel reacties achter elkaar. Wacht even een minuutje."
+  }
 
   def create
-    @comment =  @post.comments.create(params[:comment].permit(:body))
-    redirect_to post_path(@post)
+    # build comment, but no save yet
+    @comment = @post.comments.build(comment_params)
+
+    # manual Honeypot check
+    if params[:comment][:nickname].present?
+      return redirect_to @post, notice: "Bedankt voor je reactie!"
+    end
+
+    if @comment.save
+      redirect_to @post, notice: "Je reactie is geplaatst en wacht op goedkeuring."
+    else
+      redirect_to @post, alert: "Fout: #{@comment.errors.full_messages.to_sentence}"
+    end
   end
 
-private
+  private
+
   def set_post
     @post = Post.find(params[:post_id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:body, :author_name, :author_email, :author_website)
   end
 end

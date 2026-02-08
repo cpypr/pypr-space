@@ -1,4 +1,11 @@
 <article id="<%= dom_id(comment) %>">
+  <strong>
+  <% if comment.author_website.present? %>
+    <%= link_to comment.author_name, comment.author_website, rel: "nofollow noopener", target: "_blank" %>
+  <% else %>
+    <%= comment.author_name %>
+  <% end %>
+  </strong>
   <p><%= comment.body %></p>
   <%= time_tag comment.created_at, "data-local": "time-ago" %>
 </article>
