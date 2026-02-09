@@ -11,9 +11,9 @@
     <%= form.url_field :author_website, placeholder: "https://github.com[username]" %>
 
     <%= form.label :body, "Bericht" %>
-    <%= form.text_area :body, placeholder: "Bericht" %><br>
+    <%= form.text_area :body, placeholder: "Bericht", minlength: 2, required: true %><br>
 
-  <%# De Honeypot: verborgen voor mensen, verleidelijk voor bots %>
+    <%# Honeypot %>
     <div style="display:none;">
       <label>Niet invullen:</label>
       <input type="text" name="comment[nickname]">

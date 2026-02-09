@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      redirect_to @post, notice: "Je reactie is geplaatst en wacht op goedkeuring."
+      redirect_to @post, notice: "Je reactie is geplaatst."
     else
       redirect_to @post, alert: "Fout: #{@comment.errors.full_messages.to_sentence}"
     end
