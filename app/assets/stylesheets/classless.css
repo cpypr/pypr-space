@@ -35,6 +35,7 @@
 }
 
 html {
+  scroll-padding-top: 7.5rem;
   scroll-behavior: smooth;
 }
 
@@ -128,7 +129,7 @@ header>nav ul {
   display: flex;
   justify-content: center;
   gap: clamp(0.5rem, 2vw + 1rem, 2rem);
-  flex-wrap: wrap;
+  min-width: 0;
 }
 
 header>nav a {
@@ -510,6 +511,10 @@ body>footer p {
     border-left: 2px solid #e0115f;
     page-break-inside: avoid;
   }
+}
+
+img {
+  border-radius: var(--radius);
 }
 
 /*# sourceMappingURL=classless.css.map */

@@ -18,10 +18,12 @@ body>header {
   width: 100%;
   z-index: 104;
   height: 6rem;
+
+  flex-wrap: wrap;
 }
 
 body {
-  background-image: radial-gradient(circle at left top, rgba(224, 17, 95, 0.06) 0%, transparent 70%);
+  background-image: radial-gradient(circle at left top, rgba(224, 17, 95, 0.04) 0%, transparent 70%);
   /* background-attachment: fixed; */
 }
 
@@ -70,8 +72,13 @@ article>h2>a:hover {
   color: var(--text);
 }
 
+article>header>time {
+  display: block;
+  margin-bottom: 2rem;
+}
+
 #logo {
-  font-size: clamp(1.5rem, 1rem + 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 900;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
