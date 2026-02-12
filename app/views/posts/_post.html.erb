@@ -3,7 +3,7 @@
   <header>
     <h1><%= post.title %></h1>
     <p id="excerpt"><%= post.excerpt %></p>
-    <%= tag.time time_ago_in_words(@post.created_at) + " ago",
+    <%= tag.time time_ago_in_words(@post.created_at) + " geleden",
                  datetime: @post.created_at.iso8601,
                  title: l(@post.created_at, format: :long) %>
   </header>
@@ -11,7 +11,7 @@
   <%= post.body %>
 
   <br />
-  <%= link_to 'Back to bytes', root_path %>
+  <%= link_to 'Terug', root_path %>
 
   <%= render "comments/comments", post: @post %>
 
