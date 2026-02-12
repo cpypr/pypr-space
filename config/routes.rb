@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "home", to: "posts#index"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
+  get "privacy", to: "pages#privacy"
 
   resources :posts do
     resources :comments
