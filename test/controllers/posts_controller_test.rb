@@ -3,6 +3,13 @@ require "test_helper"
 class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post = posts(:one)
+    @admin = users(:admin_user)
+
+    # Log in als de admin
+    post login_url, params: {
+      email_address: @admin.email_address,
+      password: "password"
+    }
   end
 
   test "should get index" do
