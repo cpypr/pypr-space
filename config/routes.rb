@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
-  get "home", to: "posts#index"
-  get "about", to: "pages#about"
-  get "contact", to: "pages#contact"
-  get "privacy", to: "pages#privacy"
+  get "home", to: "posts#index", as: "pages_home"
+  get "about", to: "pages#about", as: "pages_about"
+  get "contact", to: "pages#contact", as: "pages_contact"
+  get "privacy", to: "pages#privacy", as: "pages_privacy"
+
+  get  "login", to: "sessions#new", as: "login"
+  post "login", to: "sessions#create"
 
   resources :posts do
     resources :comments

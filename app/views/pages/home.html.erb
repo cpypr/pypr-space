@@ -1,16 +1,29 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+
 <% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
+<hgroup>
+  <h1>Bytes</h1>
+  <p>Schrijfsels over mijn reis door het Rails-universum, de evolutie van frontend-technologie en de tijdloze wetten van het internet</p>
+</hgroup>
 
 <div aria-label="Latest Posts" id="posts">
   <% @posts.each do |post| %>
     <article>
-      <h2>
-        <%= link_to post.title, post %>
-      </h2>
       <%= tag.time time_ago_in_words(post.created_at) + " ago",
                    datetime: post.created_at.iso8601,
                    title: l(post.created_at, format: :long) %>
+      <h2>
+        <%= link_to post.title, post %>
+      </h2>
+
     </article>
   <% end %>
 </div>
+
+<% if authenticated? %>
+<div id="admin-tools">
+  <%= link_to "New post", new_post_path %>
+</div>
+<% end %>
