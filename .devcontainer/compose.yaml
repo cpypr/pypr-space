@@ -1,13 +1,13 @@
-name: "rails_app"
+name: "pypr-space"
 
 services:
-  rails-app:
+  pypr-space:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-    - ../../rails_app:/workspaces/rails_app:cached
+    - ..:/workspaces/pypr-space:cached 
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
