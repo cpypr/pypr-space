@@ -3,9 +3,9 @@
   <p>Een Groninger, vader, en developer met een flinke rugzak aan ervaring en die het liefst de diepte in duikt.</p>
 </hgroup>
 
-<%= image_tag('cris.jpg', size: "200x200", alt: "Cris", title: "Hallo!")  %>
+<%= image_tag('cris.jpg', size: "200x200", alt: "Cris", title: "Hallo!") %>
 
-<section>
+<section id="intro">
   <p>Ik draai inmiddels meer dan 25 jaar mee in dit vak. Dat betekent dat ik PHP, JavaScript en CSS "the hard way" heb geleerd. Ik ben, als het ware, meegegroeid met het web: van de fundamentele basis in de begindagen tot de moderne frameworks van nu.</p>
   <p>Een groot deel van die jaren heb ik doorgebracht in de e-commerce. Ik heb jarenlang gesleuteld aan Shopify, Lightspeed en WooCommerce. Van volledige thema's maken tot het bouwen van API-koppelingen voor voorraadbeheer, logistiek en filtersystemen. Dat was een goede leerschool, maar mijn focus is verschoven. Ik zou mijn ervaring nu graag inzetten voor projecten met een sociaal-maatschappelijke inslag, waar de techniek een doel dient in plaats van alleen een verkoopcijfer.</p>
   <strong>Waar ik nu enthousiast van word</strong>
@@ -15,7 +15,7 @@
 
 <hr>
 
-<section>
+<section id="technical">
   <h2>Technisch Profiel</h2>
   
   <h3>Talen & Frameworks</h3>
@@ -38,12 +38,12 @@
   <ul>
     <li><strong>Databases:</strong> MySQL, SQLite, PostgreSQL</li>
     <li><strong>API Design:</strong> Ontwikkelen van systemen voor orderverwerking, logistiek, productbeheer en productfilters</li>
-
+  </ul>
 </section>
 
 <hr>
 
-<section>
+<section id="personal">
   <h2 title="Away From Keyboard ;-)">AFK</h2>
   <p>Als mijn laptop dichtklapt, ben ik vooral vader en echtgenoot. Je vindt me af en toe ook buiten of andere dingen doen:</p>
   <ul>
@@ -56,11 +56,13 @@
 
 <hr>
 
-<section>
+<section id="blog">
   <h2>Over pypr.space</h2>
-  <p>Mijn digitale ruimte – "the Rails way". Dit project is niet alleen een plek om te schrijven, maar ook een showcase van mijn workflow. Het blog draait in Docker, wordt gedeployed met Kamal, en de ontwikkeling vindt plaats in Dev Containers. Dit zorgt voor een consistente omgeving, ongeacht of ik op mijn Linux-workstation of onderweg op een Chromebook werk.</p>
+  <p>Mijn digitale ruimte, "the Rails way". Dit project is niet alleen een plek om te schrijven, maar ook een showcase van mijn workflow. 
+    Het blog draait in Docker, wordt gedeployed met Kamal, en de ontwikkeling vindt plaats in Dev Containers. 
+    Dit zorgt voor een consistente omgeving, ongeacht of ik op mijn Linux-workstation of onderweg op een Chromebook werk.</p>
   <ul>
-    <li><strong>Focus:</strong> Geen onnodige plugins, maar een gestroomlijnde stack met Bundler en SQLite. Het is de plek waar ik schrijf over (mijn transitie naar) Rails en mijn interesse voor (web)techniek deel</li>
+    <li><strong>Focus:</strong> Een gestroomlijnde stack, uitwerking van een nieuwe workflow. Het is de plek waar ik schrijf over (mijn transitie naar) Rails en mijn interesse voor (web)techniek deel</li>
     <li><strong>Tech:</strong> Ruby, Rails 8, SQLite, Bundler, Kamal, Docker</li>
     <li><strong>Open Source:</strong> De <a href="https://github.com/cpypr/pypr-space" target="_blank">volledige broncode</a> staat op GitHub, omdat ik geloof in het delen van kennis (precies hoe ik het vak zelf ooit heb geleerd)</li>
   </ul>
@@ -68,7 +70,12 @@
 
 <hr>
 
-<section>
+<section id="contact">
   <h2>Meer weten?</h2>
-  <p>Laten we praten! Je kunt me altijd bereiken op <code>cris&#64;pypr.space</code>. Leuk!</p>
+  <p>Laten we praten! Je kunt me altijd bereiken op <code>cris&#64;pypr.space</code>.</p>
+  <strong>Je kunt me ook vinden op:</strong>
+  <ul>
+    <li><%= link_to "GitHub", "https://github.com/cpypr/", :target => "_blank" %></li>
+    <li><%= link_to "LinkedIn", "https://www.linkedin.com/in/cris-pijper-636ba2119/", :target => "_blank" %></li>
+  </ul>
 </section>

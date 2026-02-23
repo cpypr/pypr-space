@@ -5,23 +5,27 @@
 <% content_for :title, "Posts" %>
 
 <hgroup>
-  <h1>Bytes</h1>
-  <p>Schrijfsels over mijn reis door het Rails-universum, de evolutie van frontend-technologie en de tijdloze wetten van het internet</p>
+  <h1>Posts</h1>
+  <p>Over mijn reis door het Rails-universum, de evolutie van frontend-technologie en de tijdloze wetten van het internet</p>
 </hgroup>
 
-<div aria-label="Latest Posts" id="posts">
-  <% @posts.each do |post| %>
-    <article>
-      <%= tag.time time_ago_in_words(post.created_at) + " ago",
-                   datetime: post.created_at.iso8601,
-                   title: l(post.created_at, format: :long) %>
-      <h2>
-        <%= link_to post.title, post %>
-      </h2>
+<% if Post.exists? %>
+  <div aria-label="Latest Posts" id="posts">
+    <% @posts.each do |post| %>
+      <article>
+        <%= tag.time time_ago_in_words(post.created_at) + " ago",
+                    datetime: post.created_at.iso8601,
+                    title: l(post.created_at, format: :long) %>
+        <h2>
+          <%= link_to post.title, post %>
+        </h2>
 
-    </article>
-  <% end %>
-</div>
+      </article>
+    <% end %>
+  </div>
+<% else %>
+  <i>Ik ben onderweg...</i>
+<% end %>
 
 <% if authenticated? %>
 <div id="admin-tools">
