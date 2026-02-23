@@ -25,7 +25,7 @@ servers:
 proxy:
   ssl: false 
   host: pypr.space
-  app_port: 3000
+  app_port: 80
   healthcheck:
     path: /up
     timeout: 60 # Verhoog naar 60 of 120
