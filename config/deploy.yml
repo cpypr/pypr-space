@@ -23,7 +23,7 @@ servers:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
-  ssl: true
+  ssl: false 
   host: pypr.space
   app_port: 3000
   healthcheck:
