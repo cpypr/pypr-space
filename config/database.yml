@@ -27,6 +27,10 @@ production:
   primary:
     <<: *default
     database: storage/production.sqlite3
+    timeout: 5000
+    journal_mode: wal
+    synchronous: normal
+    mmap_size: 134217728
   cache:
     <<: *default
     database: storage/production_cache.sqlite3
