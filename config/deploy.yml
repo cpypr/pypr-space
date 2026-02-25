@@ -23,12 +23,12 @@ servers:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
-  ssl: false 
+  ssl: true 
   host: pypr.space
   app_port: 80
   healthcheck:
     path: /up
-    timeout: 60 # Verhoog naar 60 of 120
+    timeout: 120 # Verhoog naar 60 of 120
     interval: 5
 
 # Credentials for your image host.
@@ -46,7 +46,6 @@ env:
   secret:
     - RAILS_MASTER_KEY
   clear:
-    RAILS_MASTER_KEY: "116ff83d09685e321bf1ccebb67e5617"
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true

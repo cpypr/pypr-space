@@ -26,20 +26,4 @@ test:
 production:
   primary:
     <<: *default
-    database: storage/production.sqlite3
-    timeout: 5000
-    journal_mode: wal
-    synchronous: normal
-    mmap_size: 134217728
-  cache:
-    <<: *default
-    database: storage/production_cache.sqlite3
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *default
-    database: storage/production_queue.sqlite3
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *default
-    database: storage/production_cable.sqlite3
-    migrations_paths: db/cable_migrate
+    database: storage/production.sqlite
