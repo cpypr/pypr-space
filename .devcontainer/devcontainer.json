@@ -20,6 +20,12 @@
     "REDIS_URL": "redis://redis:6379/1",
     "KAMAL_REGISTRY_PASSWORD": "$KAMAL_REGISTRY_PASSWORD"
   },
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/tmp/ssh-agent.socket"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh/agent.sock,target=/tmp/ssh-agent.socket,type=bind"
+  ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
     3000,
