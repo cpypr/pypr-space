@@ -20,21 +20,20 @@
     "REDIS_URL": "redis://redis:6379/1",
     "KAMAL_REGISTRY_PASSWORD": "$KAMAL_REGISTRY_PASSWORD"
   },
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/tmp/ssh-agent.socket"
-  },
-  "mounts": [
-    "source=${localEnv:HOME}/.ssh/agent.sock,target=/tmp/ssh-agent.socket,type=bind"
-  ],
+
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
     3000,
     6379
   ],
+
+  "postStartCommand": "sudo chown -R $(whoami) $(dirname $SSH_AUTH_SOCK) || true",
+  
   // Configure tool-specific properties.
   // "customizations": {},
   // Uncomment to connect as root instead. More info: https://containers.dev/implementors/json_reference/#remoteUser.
   // "remoteUser": "root",
   // Use 'postCreateCommand' to run commands after the container is created.
+  
   "postCreateCommand": "bin/setup --skip-server"
 }
