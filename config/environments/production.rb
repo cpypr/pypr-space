@@ -91,7 +91,7 @@ Rails.application.configure do
   config.hosts << "www.pypr.nl"
 
   # STA INTERNE DOCKER HOSTS TOE VOOR KAMAL HEALTHCHECKS:
-  config.hosts << /^[a-f0-9]{12}$/
-  config.hosts << "localhost"
-  config.hosts << /.*\.docker\.internal/
+  config.host_authorization = {
+    exclude: ->(request) { request.path == "/up" }
+  }
 end
