@@ -89,4 +89,9 @@ Rails.application.configure do
   config.hosts << "pypr.space"
   config.hosts << "pypr.nl"
   config.hosts << "www.pypr.nl"
+
+  # STA INTERNE DOCKER HOSTS TOE VOOR KAMAL HEALTHCHECKS:
+  config.hosts << /^[a-f0-9]{12}$/
+  config.hosts << "localhost"
+  config.hosts << /.*\.docker\.internal/
 end
