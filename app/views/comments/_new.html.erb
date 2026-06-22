@@ -2,13 +2,13 @@
 <%= form_with model: [ @post, @post.comments.build ] do |form| %>
   <div>
     <%= form.label :author_name, "Naam" %>
-    <%= form.text_field :author_name, placeholder: "Naam (of je geheime alias)", required: true %>
+    <%= form.text_field :author_name, placeholder: "Naam", required: true %>
 
     <%= form.label :author_email, "E-mail (wordt niet getoond)" %>
-    <%= form.email_field :author_email, placeholder: "user@example.com" %>
+    <%= form.email_field :author_email, placeholder: "E-mail" %>
 
     <%= form.label :author_website, "Website (optioneel)" %>
-    <%= form.url_field :author_website, placeholder: "https://github.com[username]" %>
+    <%= form.url_field :author_website, placeholder: "Website" %>
 
     <%= form.label :body, "Bericht" %>
     <%= form.text_area :body, placeholder: "Bericht", minlength: 2, required: true %><br>
